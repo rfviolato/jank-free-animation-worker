@@ -16,6 +16,10 @@ module.exports = {
         ],
         exclude: /node_modules/,
       },
+      {
+        test: /\.worker\.js$/,
+        use: { loader: 'worker-loader' }
+      },
     ],
   },
   plugins: [
