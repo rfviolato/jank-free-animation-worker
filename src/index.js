@@ -1,17 +1,8 @@
 import Worker from './index.worker.js';
+import doAShitLoadOfWork from './shit-load-of-work';
 
 const worker = new Worker();
 const root = document.getElementById('root');
 
-worker.addEventListener('message', ({ data }) => {
-  console.log({ data });
-
-  data.forEach((post) => {
-    const div = document.createElement('div');
-
-    div.innerText = post.name;
-    root.appendChild(div);
-  });
-});
-
-worker.postMessage({ url: 'posts' });
+worker.postMessage('GO!');
+// setInterval(doAShitLoadOfWork, 50);
