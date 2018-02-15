@@ -5,7 +5,8 @@
   "author": "rfviolato <rfviolato@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server",
+    "build": "NODE_ENV=production webpack"
   },
   "dependencies": {},
   "devDependencies": {
