@@ -1,4 +1,4 @@
-const doAShitLoadOfWork = (iterations = 100000) => {
+const doAShitLoadOfWork = (iterations = 125000) => {
   console.log('Doing a shit load of work');
 
   for (let i = 0; i < iterations; i += 1) {
