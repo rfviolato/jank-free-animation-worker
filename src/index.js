@@ -4,7 +4,14 @@ const worker = new Worker();
 const root = document.getElementById('root');
 
 worker.addEventListener('message', ({ data }) => {
-  root.innerText = `Message from the worker: ${data}`;
+  console.log({ data });
+
+  data.forEach((post) => {
+    const div = document.createElement('div');
+
+    div.innerText = post.name;
+    root.appendChild(div);
+  });
 });
 
-worker.postMessage('What up');
+worker.postMessage({ url: 'posts' });
