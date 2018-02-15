@@ -1,5 +1,12 @@
 import doAShitLoadOfWork from './shit-load-of-work';
 
-self.onmessage = () => {
-  setInterval(doAShitLoadOfWork, 50);
+let interval;
+
+self.onmessage = ({ data }) => {
+  if (data === 'GO') {
+    interval = setInterval(doAShitLoadOfWork, 50);
+  }
+  else if (data === 'STOP') {
+    clearInterval(interval);
+  }
 };
